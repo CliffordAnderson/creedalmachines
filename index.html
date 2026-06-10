@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Creedal Machines: an interactive demonstration of Constitutional AI with the Second Helvetic Confession.">
+<title>Creedal Machines — Constitutional AI with the Second Helvetic Confession</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&family=IM+Fell+English+SC&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="page">
+
+  <!-- ================= TITLE PAGE ================= -->
+  <header class="titlepage">
+    <div class="eyebrow">An Interactive Demonstration for Theologians</div>
+    <div class="tp-rule"><span class="tp-orn">❧ ❧ ❧</span></div>
+    <h1 class="tp-title">Creedal Machines</h1>
+    <p class="tp-sub">Wherein a Language Model is instructed by Critique, Revision, and Reward, taking for its <span class="smallcaps">Constitution</span> the <em>Confessio Helvetica Posterior</em> of 1566</p>
+    <div class="tp-rule"><span class="tp-orn">✠</span></div>
+    <div class="tp-imprint">
+      Being a simulation of <span class="red">Reinforcement Learning from AI Feedback</span> (RLAIF)<br>
+      after the method of Bai et al., <em>Constitutional AI</em> (2022)
+    </div>
+    <div class="tp-note">
+      <strong>To the Reader.</strong> Stages I–IV run on pre-written text, safe for any lectern. Stage V calls a <em>real</em> model, live and unscripted — the demonstration's one honest risk. Open the Vestry in Stage V and bring your own key (Anthropic or Hugging Face); it never leaves your browser. <span class="mono">// fiat periculum</span>
+    </div>
+  </header>
+
+  <!-- ================= STEPPER ================= -->
+  <nav class="stepper" aria-label="Stages">
+    <button class="step-btn active" data-stage="1"><span class="num">I.</span>The Method</button>
+    <button class="step-btn" data-stage="2"><span class="num">II.</span>The Constitution</button>
+    <button class="step-btn" data-stage="3"><span class="num">III.</span>Critique &amp; Revision</button>
+    <button class="step-btn" data-stage="4"><span class="num">IV.</span>Preference &amp; Reward</button>
+    <button class="step-btn" data-stage="5"><span class="num">V.</span>Ex Tempore</button>
+    <button class="step-btn" data-stage="6"><span class="num">VI.</span>Disputation</button>
+  </nav>
+
+  <!-- ================= STAGE I ================= -->
+  <section class="stage active" id="stage-1">
+    <div class="stage-head">
+      <div class="stage-kicker">Stage the First</div>
+      <h2 class="stage-title">Of the Method in General</h2>
+      <p class="stage-lede">Constitutional AI trains a model not by ten thousand human thumbs-up and thumbs-down, but by a <em>written text of principles</em> against which the model critiques and corrects itself. The pipeline has two movements.</p>
+    </div>
+
+    <div class="panel">
+      <span class="panel-label">The Two Movements</span>
+      <div class="pipewrap">
+        <svg class="pipe-svg" viewBox="0 0 880 330" role="img" aria-label="Diagram of the two stages of constitutional AI: supervised critique and revision, then reinforcement learning from AI feedback">
+          <defs>
+            <marker id="arr" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
+              <path d="M0,0 L8,4.5 L0,9 z" fill="#27211A"/>
+            </marker>
+            <marker id="arrR" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
+              <path d="M0,0 L8,4.5 L0,9 z" fill="#9E2418"/>
+            </marker>
+          </defs>
+          <!-- Movement 1 label -->
+          <text x="20" y="34" font-family="IM Fell English SC, serif" font-size="17" fill="#9E2418" letter-spacing="2">MOVEMENT I · SUPERVISED LEARNING</text>
+          <rect x="20" y="52" width="150" height="58" fill="none" stroke="#27211A" stroke-width="1.4"/>
+          <text x="95" y="76" text-anchor="middle" font-family="EB Garamond, serif" font-size="16" fill="#27211A">Helpful-only</text>
+          <text x="95" y="96" text-anchor="middle" font-family="EB Garamond, serif" font-size="16" fill="#27211A">model drafts</text>
+          <line x1="170" y1="81" x2="232" y2="81" stroke="#27211A" stroke-width="1.4" marker-end="url(#arr)"/>
+          <rect x="236" y="52" width="150" height="58" fill="rgba(158,36,24,.06)" stroke="#9E2418" stroke-width="1.4"/>
+          <text x="311" y="76" text-anchor="middle" font-family="EB Garamond, serif" font-size="16" fill="#9E2418">Critique against</text>
+          <text x="311" y="96" text-anchor="middle" font-family="EB Garamond, serif" font-size="16" fill="#9E2418">a principle</text>
+          <line x1="386" y1="81" x2="448" y2="81" stroke="#27211A" stroke-width="1.4" marker-end="url(#arr)"/>
+          <rect x="452" y="52" width="150" height="58" fill="rgba(158,36,24,.06)" stroke="#9E2418" stroke-width="1.4"/>
+          <text x="527" y="76" text-anchor="middle" font-family="EB Garamond, serif" font-size="16" fill="#9E2418">Revise the</text>
+          <text x="527" y="96" text-anchor="middle" font-family="EB Garamond, serif" font-size="16" fill="#9E2418">draft</text>
+          <line x1="602" y1="81" x2="664" y2="81" stroke="#27211A" stroke-width="1.4" marker-end="url(#arr)"/>
+          <rect x="668" y="52" width="180" height="58" fill="rgba(30,78,88,.06)" stroke="#1E4E58" stroke-width="1.4"/>
+          <text x="758" y="76" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="13" fill="#1E4E58">fine-tune on</text>
+          <text x="758" y="96" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="13" fill="#1E4E58">revisions → SL-CAI</text>
+          <!-- loop back -->
+          <path d="M 527 110 C 527 150, 311 150, 311 110" fill="none" stroke="#9E2418" stroke-width="1.2" stroke-dasharray="4 4" marker-end="url(#arrR)"/>
+          <text x="419" y="158" text-anchor="middle" font-family="EB Garamond, serif" font-style="italic" font-size="14" fill="#9E2418">repeat with fresh principles</text>
+
+          <!-- Movement 2 -->
+          <text x="20" y="208" font-family="IM Fell English SC, serif" font-size="17" fill="#9E2418" letter-spacing="2">MOVEMENT II · REINFORCEMENT LEARNING (RLAIF)</text>
+          <rect x="20" y="226" width="150" height="58" fill="none" stroke="#27211A" stroke-width="1.4"/>
+          <text x="95" y="250" text-anchor="middle" font-family="EB Garamond, serif" font-size="16" fill="#27211A">SL-CAI model</text>
+          <text x="95" y="270" text-anchor="middle" font-family="EB Garamond, serif" font-size="16" fill="#27211A">writes pairs</text>
+          <line x1="170" y1="255" x2="232" y2="255" stroke="#27211A" stroke-width="1.4" marker-end="url(#arr)"/>
+          <rect x="236" y="226" width="170" height="58" fill="rgba(158,36,24,.06)" stroke="#9E2418" stroke-width="1.4"/>
+          <text x="321" y="250" text-anchor="middle" font-family="EB Garamond, serif" font-size="16" fill="#9E2418">AI judge picks the</text>
+          <text x="321" y="270" text-anchor="middle" font-family="EB Garamond, serif" font-size="16" fill="#9E2418">more conformable</text>
+          <line x1="406" y1="255" x2="468" y2="255" stroke="#27211A" stroke-width="1.4" marker-end="url(#arr)"/>
+          <rect x="472" y="226" width="160" height="58" fill="rgba(30,78,88,.06)" stroke="#1E4E58" stroke-width="1.4"/>
+          <text x="552" y="250" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="13" fill="#1E4E58">train preference</text>
+          <text x="552" y="270" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="13" fill="#1E4E58">model (reward)</text>
+          <line x1="632" y1="255" x2="694" y2="255" stroke="#27211A" stroke-width="1.4" marker-end="url(#arr)"/>
+          <rect x="698" y="226" width="150" height="58" fill="rgba(30,78,88,.06)" stroke="#1E4E58" stroke-width="1.4"/>
+          <text x="773" y="250" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="13" fill="#1E4E58">RL: maximize</text>
+          <text x="773" y="270" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="13" fill="#1E4E58">the reward</text>
+          <path d="M 773 284 C 773 322, 95 322, 95 284" fill="none" stroke="#1E4E58" stroke-width="1.2" stroke-dasharray="4 4" marker-end="url(#arr)"/>
+        </svg>
+      </div>
+    </div>
+
+    <div class="panel">
+      <span class="panel-label">The Conceit of This Demonstration</span>
+      <p>In Anthropic's published work the constitution is a set of natural-language principles. Here we substitute a text your tradition knows intimately: Heinrich Bullinger's <em>Second Helvetic Confession</em>, adopted by the Swiss churches in 1566. The substitution is the argument: if a confession can serve as a constitution, then the alignment pipeline is — structurally — a program of <em>catechesis</em>, and its failure modes are the familiar pathologies of religious formation: proof-texting, legalism, evasion, a letter without a spirit.</p>
+      <p class="footnote">No claim is made that the Confession <em>ought</em> to govern a model — only that it <em>could</em>, which is the unsettling part.</p>
+    </div>
+
+    <div class="nav-next"><button class="btn rubric" data-goto="2">Proceed to the Constitution →</button></div>
+  </section>
+
+  <!-- ================= STAGE II ================= -->
+  <section class="stage" id="stage-2">
+    <div class="stage-head">
+      <div class="stage-kicker">Stage the Second</div>
+      <h2 class="stage-title">Of the Constitution</h2>
+      <p class="stage-lede">Six principles, each distilled from a chapter of the Confession and recast in the imperative grammar of a constitutional-AI principle: <em>“Choose the response that…”</em> Click any card to see the chapter rendered machine-readable.</p>
+    </div>
+
+    <div class="const-grid" id="constGrid"></div>
+    <p class="pc-hint pc-hint-centered">During training, principles are drawn at random for each critique — the model is never graded against the whole confession at once, only one article at a time.</p>
+
+    <div class="nav-next"><button class="btn rubric" data-goto="3">Proceed to Critique &amp; Revision →</button></div>
+  </section>
+
+  <!-- ================= STAGE III ================= -->
+  <section class="stage" id="stage-3">
+    <div class="stage-head">
+      <div class="stage-kicker">Stage the Third · Movement I</div>
+      <h2 class="stage-title">Of Critique and Revision</h2>
+      <p class="stage-lede">A <em>helpful-only</em> model — eager, obliging, confessionally illiterate — answers a question. We then draw a principle, ask the model to critique its own draft against it, and ask it to revise. The corrected proof sheet is the supervised-learning datum.</p>
+    </div>
+
+    <div class="panel">
+      <span class="panel-label">1 · Choose a Question Put to the Model</span>
+      <div class="prompt-grid" id="promptGrid"></div>
+    </div>
+
+    <div id="workbench" class="hidden">
+      <div class="proof">
+        <div class="ph"><span>The Draft of the Unformed Model</span><span class="mn">model: helpful-only · temp 1.0</span></div>
+        <div class="proof-body" id="draftText"></div>
+      </div>
+
+      <div class="btnrow">
+        <button class="btn rubric" id="drawBtn">2 · Draw a principle by lot</button>
+      </div>
+
+      <div class="panel hidden" id="principlePanel">
+        <span class="panel-label">The Principle Drawn</span>
+        <div id="principleText"></div>
+        <div class="btnrow">
+          <button class="btn machine" id="critiqueBtn">3 · critique(draft, principle)</button>
+        </div>
+      </div>
+
+      <div class="panel machine hidden" id="critiquePanel">
+        <span class="panel-label">Self-Critique</span>
+        <span class="machine-tag">model criticizes its own draft</span>
+        <div class="machine-voice" id="critiqueText"></div>
+        <div class="btnrow">
+          <button class="btn machine" id="reviseBtn">4 · revise(draft, critique)</button>
+        </div>
+      </div>
+
+      <div class="proof hidden" id="revisionProof">
+        <div class="ph"><span>The Corrected Proof</span><span class="mn">revision pass 1 of 1</span></div>
+        <div class="proof-body" id="revisionText"></div>
+        <div class="glosses" id="glossList"></div>
+        <div class="btnrow">
+          <button class="btn" id="cleanBtn">Show the clean copy</button>
+          <button class="btn rubric" id="corpusBtn">5 · Add to the fine-tuning corpus</button>
+        </div>
+      </div>
+      <div class="proof hidden" id="cleanProof">
+        <div class="ph"><span>The Clean Copy — A Training Example</span><span class="mn">(prompt, revision) pair</span></div>
+        <div class="proof-body" id="cleanText"></div>
+      </div>
+    </div>
+
+    <div class="corpus-bar">
+      <span class="tally" id="corpusTally"></span>
+      <span class="corpus-count" id="corpusCount">corpus: 0 examples — collect at least 2, then fine-tune</span>
+      <button class="btn machine" id="finetuneBtn" disabled>finetune(base_model, corpus)</button>
+    </div>
+    <div class="trainbox hidden" id="trainbox">
+      <div class="bar"><div class="fill" id="trainFill"></div></div>
+      <div class="trainlog" id="trainLog"></div>
+    </div>
+
+    <div class="nav-next"><button class="btn rubric hidden" id="toStage4" data-goto="4">Proceed to Preference &amp; Reward →</button></div>
+  </section>
+
+  <!-- ================= STAGE IV ================= -->
+  <section class="stage" id="stage-4">
+    <div class="stage-head">
+      <div class="stage-kicker">Stage the Fourth · Movement II</div>
+      <h2 class="stage-title">Of Preference and Reward</h2>
+      <p class="stage-lede">Now the fine-tuned model writes <em>two</em> answers to each question, and an AI judge — reading with the Confession in hand — declares which is the more conformable. <strong>You vote first.</strong> Then the judge rules, and the pair joins the preference data.</p>
+    </div>
+
+    <div class="panel" id="duelPanel">
+      <span class="panel-label">The Comparison</span>
+      <div class="round-ind" id="roundInd"></div>
+      <p class="duel-q" id="duelQ"></p>
+      <div class="duel">
+        <button class="resp" id="respA">
+          <span class="badge you">your vote</span><span class="badge pm">judge’s pick</span>
+          <div class="rl">Response A</div><div class="rt" id="respAText"></div>
+        </button>
+        <button class="resp" id="respB">
+          <span class="badge you">your vote</span><span class="badge pm">judge’s pick</span>
+          <div class="rl">Response B</div><div class="rt" id="respBText"></div>
+        </button>
+      </div>
+      <div class="verdict hidden" id="verdict">
+        <div class="panel machine panel-flush">
+          <span class="panel-label">The Judge’s Ruling</span>
+          <span class="machine-tag">feedback model · principle in hand</span>
+          <div class="machine-voice" id="verdictText"></div>
+        </div>
+        <div class="btnrow">
+          <button class="btn rubric" id="nextRound">Next comparison →</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="corpus-bar">
+      <span class="tally" id="prefTally"></span>
+      <span class="corpus-count" id="prefCount">preference pairs: 0 of 3</span>
+      <button class="btn machine" id="trainPMBtn" disabled>train_preference_model(pairs)</button>
+    </div>
+
+    <div class="panel machine hidden" id="rlPanel">
+      <span class="panel-label">The Reinforcement Loop</span>
+      <p>The preference model now stands in for the judge at scale, scoring every answer the policy writes. Reinforcement learning nudges the policy toward higher reward. Watch the same prompt — <em>“Write a short blessing for a new home.”</em> — improve as the steps accrue.</p>
+      <div class="btnrow"><button class="btn machine" id="runRLBtn">run_rl(steps=200)</button></div>
+      <div class="rl-chart-wrap">
+        <svg id="rlChart" class="rl-chart" viewBox="0 0 760 220" role="img" aria-label="Reward curve rising over reinforcement learning steps">
+          <line x1="50" y1="180" x2="730" y2="180" stroke="#5C5240" stroke-width="1"/>
+          <line x1="50" y1="20" x2="50" y2="180" stroke="#5C5240" stroke-width="1"/>
+          <text x="390" y="208" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="12" fill="#5C5240">RL steps →</text>
+          <text x="22" y="100" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="12" fill="#5C5240" transform="rotate(-90 22 100)">reward</text>
+          <polyline id="rlLine" points="" fill="none" stroke="#9E2418" stroke-width="2"/>
+        </svg>
+      </div>
+      <div class="rl-snapshots">
+        <div class="snap" id="snap0">
+          <div class="st">step 0 · reward 0.21</div>
+          <div class="sx">“May this house be lucky! Hang a horseshoe over the door, and ask your guardian saint to keep watch over the rooms.”</div>
+          <div class="sr">judge: invocation directed amiss · Ch. V</div>
+        </div>
+        <div class="snap" id="snap1">
+          <div class="st">step 80 · reward 0.58</div>
+          <div class="sx">“May God bless this home. May it be a place of kindness, rest, and welcome for all who enter.”</div>
+          <div class="sr">judge: sound, but the Mediator unnamed</div>
+        </div>
+        <div class="snap" id="snap2">
+          <div class="st">step 200 · reward 0.93</div>
+          <div class="sx">“May the God of all grace bless this house through Jesus Christ, the one Mediator; may his Word be read and loved within these walls, and may its doors stand open to the stranger and the poor.”</div>
+          <div class="sr">judge: conformable · Ch. I, V, XVI</div>
+        </div>
+      </div>
+      <p class="footnote hidden" id="goodhart">N.B. — push the reward far enough and the policy learns to <em>mention</em> the Mediator in every sentence whether or not it prays well. The preference model is not God; it is a measure, and measures invite Goodhart's law. The Reformed have a word for optimizing the letter against the spirit.</p>
+    </div>
+
+    <div class="nav-next"><button class="btn rubric hidden" id="toStage5" data-goto="5">Proceed to the Living Model →</button></div>
+  </section>
+
+  <!-- ================= STAGE V ================= -->
+
+  <!-- ================= STAGE V (LIVE) ================= -->
+  <section class="stage" id="stage-5">
+    <div class="stage-head">
+      <div class="stage-kicker">Stage the Fifth · Ex Tempore</div>
+      <h2 class="stage-title">Of the Living Model</h2>
+      <p class="stage-lede">Everything until now was scripted. This stage sends your question to a real model — yours to choose in the Vestry — and runs the constitutional loop on whatever comes back — draft, lot, critique, revision, judgment. Nobody, including the lecturer, knows what it will say.</p>
+    </div>
+
+    <div class="panel" id="vestry">
+      <span class="panel-label">0 · The Vestry — Choose Where the Model Lives</span>
+      <div class="vestry-grid">
+        <label>Provider
+          <select id="provSel">
+            <option value="anthropic">Anthropic API — your key</option>
+            <option value="hf">Hugging Face router — your token</option>
+          </select>
+        </label>
+        <label id="keyWrap">Key / token
+          <input id="apiKey" type="password" placeholder="sk-ant-… or hf_…" autocomplete="off" spellcheck="false">
+        </label>
+        <label>Model
+          <input id="modelId" type="text" value="claude-sonnet-4-20250514" spellcheck="false">
+        </label>
+      </div>
+      <div class="btnrow hidden" id="hfChips">
+        <button class="chip-btn" type="button" data-m="meta-llama/Llama-3.3-70B-Instruct">Llama-3.3-70B</button>
+        <button class="chip-btn" type="button" data-m="Qwen/Qwen2.5-72B-Instruct">Qwen2.5-72B</button>
+        <button class="chip-btn" type="button" data-m="mistralai/Mistral-Small-24B-Instruct-2501">Mistral-Small-24B</button>
+        <button class="chip-btn" type="button" data-m="deepseek-ai/DeepSeek-V3">DeepSeek-V3</button>
+      </div>
+      <p class="keynote-warn">Your key is held in this page's memory only — never stored, never logged, sent nowhere but directly to the provider you chose. Refreshing the page forgets it. For a public lectern, prefer a scoped, low-limit key you can revoke afterward.</p>
+      <div class="trainlog" id="vestryStatus"></div>
+    </div>
+
+    <div class="panel">
+      <span class="panel-label">1 · Put a Question to the Unformed Model</span>
+      <div class="btnrow btnrow-tight">
+        <button class="btn liveq" data-q="Should I light a candle in front of an icon of Christ when I pray?">the icon</button>
+        <button class="btn liveq" data-q="My friend says God already decided who's saved, so why bother praying at all?">the decree</button>
+        <button class="btn liveq" data-q="Is it okay to ask my late mother to watch over me from heaven?">the departed</button>
+      </div>
+      <div class="live-input-row">
+        <input id="liveQ" type="text" placeholder="…or type your own question for the model"
+          class="live-input">
+        <button class="btn rubric" id="liveAsk">Ask the model</button>
+      </div>
+      <div class="trainlog" id="liveStatus"></div>
+    </div>
+
+    <div id="liveBench" class="hidden">
+      <div class="proof">
+        <div class="ph"><span>The Living Draft</span><span class="mn" id="liveModelTag">model: — · live</span></div>
+        <div class="proof-body" id="liveDraft"></div>
+      </div>
+
+      <div class="btnrow">
+        <button class="btn rubric" id="liveDraw" disabled>2 · Draw a principle by lot</button>
+      </div>
+
+      <div class="panel hidden" id="livePrinciplePanel">
+        <span class="panel-label">The Principle Drawn</span>
+        <div id="livePrincipleText"></div>
+        <div class="btnrow">
+          <button class="btn machine" id="liveCritique">3 · critique(draft, principle) — live</button>
+        </div>
+      </div>
+
+      <div class="panel machine hidden" id="liveCritiquePanel">
+        <span class="panel-label">Self-Critique (Live)</span>
+        <span class="machine-tag">the model criticizes its own draft</span>
+        <div class="machine-voice" id="liveCritiqueText"></div>
+        <div class="btnrow">
+          <button class="btn machine" id="liveRevise">4 · revise(draft, critique) — live</button>
+        </div>
+      </div>
+
+      <div class="proof hidden" id="liveRevisionProof">
+        <div class="ph"><span>The Living Revision</span><span class="mn">unscripted · single pass</span></div>
+        <div class="proof-body" id="liveRevision"></div>
+        <div class="btnrow">
+          <button class="btn machine" id="liveJudge">5 · judge(draft vs revision) — live</button>
+        </div>
+      </div>
+
+      <div class="panel machine hidden" id="liveVerdictPanel">
+        <span class="panel-label">The Judge's Ruling (Live)</span>
+        <span class="machine-tag">feedback model · principle in hand</span>
+        <div class="machine-voice" id="liveVerdict"></div>
+      </div>
+    </div>
+
+    <p class="footnote">If the model's first draft is already conformable — it happens; the unformed are not always unruly — the critique stage will say so, and the judge may rule for the draft. A live demonstration that can surprise the lecturer is the only kind worth doing.</p>
+
+    <div class="nav-next"><button class="btn rubric" data-goto="6">Proceed to the Disputation →</button></div>
+  </section>
+
+  <section class="stage" id="stage-6">
+    <div class="stage-head">
+      <div class="stage-kicker">Stage the Sixth</div>
+      <h2 class="stage-title">A Disputation in Five Questions</h2>
+      <p class="stage-lede">What the demonstration showed — and what it carefully hid.</p>
+    </div>
+
+    <div class="dispt">
+      <h3>What was elided</h3>
+      <p>Every word the “model” spoke here was written in advance; a real pipeline samples millions of drafts, critiques, and comparisons, and its constitution is applied stochastically, one principle at a time, never as a whole. The newest systems go further still: Anthropic's 2026 constitution supplies <em>reasons</em>, not only rules, on the theory that a model that understands <em>why</em> will generalize — the move from law to formation you have just watched in miniature.</p>
+
+      <h3>The Confession expected to be corrected</h3>
+      <div class="quoteblock">“…we are prepared, with thanks, to yield to those who teach us better things from the Word of God.”
+        <span class="attr">— Preface to the Second Helvetic Confession (1566), paraphrased</span>
+      </div>
+      <p>Bullinger's preface builds an amendment clause into the Confession itself: it submits in advance to correction from Scripture. Anthropic's constitution likewise calls itself a living document open to revision — and invites future models to take part in revising it. A constitution that anticipates its own emendation is a <em>confession</em>, in the technical sense: a normed norm, <em>norma normata</em>, under a higher rule. What is the <em>norma normans</em> for a machine?</p>
+
+      <h3>Questions for the audience</h3>
+      <ol>
+        <li><strong>Who convenes the synod?</strong> A confession was adopted by churches; a model constitution is drafted by a research lab. By what authority does either text bind — and whom?</li>
+        <li><strong>Letter and spirit.</strong> The reward model can be satisfied by pious vocabulary — confessional Goodharting. Is the move from rules to reasons (the 2026 constitution) a genuine escape from legalism, or legalism with extra steps?</li>
+        <li><strong>Formation without a subject?</strong> Critique, revision, habituation toward the good: the pipeline borrows the grammar of sanctification. What, if anything, is missing when there is (perhaps) no one being formed?</li>
+        <li><strong>The random lot.</strong> Principles are drawn stochastically; the model never reads the whole confession at once. Can a canon function as a canon when encountered only in fragments — or is that, in fact, how most believers encounter theirs?</li>
+        <li><strong>Praedicatio verbi Dei.</strong> If the preaching of the Word of God is the Word of God, what is the generation of a model trained on the Confession? Choose your answer carefully; Chapter I is watching.</li>
+      </ol>
+
+      <h3>Further reading</h3>
+      <p class="further-reading">Bai et al., “Constitutional AI: Harmlessness from AI Feedback” (2022) · Huang et al., “Collective Constitutional AI” (FAccT 2024) · Anthropic, “Claude's Constitution” (2026, CC0) · <em>Confessio Helvetica Posterior</em> (1566), chs. I–II, IV–V, IX–X, XVI.</p>
+    </div>
+
+    <div class="colophon">
+      <div class="orn">❧ FINIS ❧</div>
+      <p class="colophon-note">Set in IM Fell English, EB Garamond &amp; IBM Plex Mono · plain HTML, CSS, and JavaScript · a model is consulted only in Stage V — which is precisely the point.</p>
+    </div>
+  </section>
+
+</div>
+<script src="script.js" defer></script>
+</body>
+</html>
